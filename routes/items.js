@@ -25,26 +25,6 @@ itemsRoute.get("/", async (request, response) => {
     response.status(500).send(err);
   }
 });
-
-// itemsRoute.get("/", (request, response) => {
-//   try {
-//     const { user, id } = request.query;
-//     const items = Item.find({ seller: user });
-//     response.json(items);
-//   } catch (err) {
-//     response.status(500).send(err);
-//   }
-// });
-// itemsRoute.get("/:id", (request, response) => {
-//   const { id } = request.params;
-//   try {
-//     const items = Item.findById(id);
-//     response.json(items);
-//   } catch (err) {
-//     response.status(500).send(err);
-//   }
-// });
-
 itemsRoute.delete("/:id", async (request, response) => {
   try {
     const { id } = request.params;

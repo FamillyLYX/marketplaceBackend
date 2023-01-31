@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-let DB_URL =
-  process.env.MONGODB_URL || "mongodb://localhost:27017/marketplacebackend";
+let DB_URL = process.env.MONGODB_URL;
 
 mongoose.set("strictQuery", false);
 mongoose

@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config();
 require("./db/mongodb");
@@ -11,6 +12,11 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.use(express.json());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use("/items", itemsRouter);
 

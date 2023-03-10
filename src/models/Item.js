@@ -9,6 +9,8 @@ const itemSchema = new Schema({
   drop: { type: String, required: true },
   seller: { type: String, required: true },
   price: { type: Number, required: true },
+  condition: { type: String, required: false },
+  description: { type: String, required: false },
 });
 
 const Item = model("Item", itemSchema);

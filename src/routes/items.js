@@ -61,7 +61,7 @@ Router.post("/", async (request, response) => {
       seller: seller,
     });
   } catch (error) {
-    response.status(300).send("error occurred check the body of the request");
+    response.status(300).send(error);
   }
 });
 

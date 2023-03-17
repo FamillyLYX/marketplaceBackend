@@ -38,6 +38,22 @@ Router.delete("/:id", async (request, response) => {
   }
 });
 
+Router.delete("/:contract/:id", async (request, response) => {
+  try {
+    const { id, contract } = request.params;
+    console.log(request.params);
+    // let item = await Item.findById(id);
+    let deletedItem = await Item.deleteOne({
+      nftId: id,
+      contractAddress: contract,
+    });
+    response.status(200).send(`item deleted ${deletedItem.id} successfully`);
+  } catch (error) {
+    console.log(error);
+    response.send(error);
+  }
+});
+
 Router.post("/", async (request, response) => {
   try {
     let {

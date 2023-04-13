@@ -65,6 +65,10 @@ Router.post("/", async (request, response) => {
       seller,
       price,
       imgUrl,
+      images,
+      description,
+      condition,
+      location,
     } = request.body;
     let newItem = await Item.create({
       nftId: id,
@@ -75,6 +79,10 @@ Router.post("/", async (request, response) => {
       drop: drop,
       imgUrl: imgUrl,
       seller: seller,
+      imageLinks: images,
+      description: description,
+      condition: condition,
+      location: location,
     });
   } catch (error) {
     response.status(300).send(error);

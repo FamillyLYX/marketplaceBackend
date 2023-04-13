@@ -66,7 +66,7 @@ Router.post("/", async (request, response) => {
       price,
       imgUrl,
       images,
-      description,
+      info,
       condition,
       location,
     } = request.body;
@@ -80,7 +80,7 @@ Router.post("/", async (request, response) => {
       imgUrl: imgUrl,
       seller: seller,
       imageLinks: images,
-      description: description,
+      addtionalInfo: info,
       condition: condition,
       location: location,
     });

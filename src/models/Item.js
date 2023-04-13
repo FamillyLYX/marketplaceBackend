@@ -11,7 +11,7 @@ const itemSchema = new Schema({
   seller: { type: String, required: true },
   price: { type: Number, required: true },
   condition: { type: String, required: true },
-  description: { type: String, required: true },
+  addtionalInfo: { type: String, required: true },
   location: { type: String, required: true },
   condition: { type: String, required: true },
 });

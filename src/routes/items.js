@@ -70,21 +70,30 @@ Router.post("/", async (request, response) => {
       condition,
       location,
     } = request.body;
-    let newItem = await Item.create({
-      nftId: id,
-      contractAddress: contractAddress,
-      originalMinter: originalMinter,
-      price: price,
-      size: size,
-      drop: drop,
-      imgUrl: imgUrl,
-      seller: seller,
-      imageLinks: images,
-      addtionalInfo: info,
-      condition: condition,
-      location: location,
-    });
+    let newItem = Item.create(
+      {
+        nftId: id,
+        contractAddress: contractAddress,
+        originalMinter: originalMinter,
+        price: price,
+        size: size,
+        drop: drop,
+        imgUrl: imgUrl,
+        seller: seller,
+        imageLinks: images,
+        addtionalInfo: info,
+        condition: condition,
+        location: location,
+      },
+      (err, user) => {
+        if (err) {
+          console.log(err);
+          throw err;
+        }
+      }
+    );
   } catch (error) {
+    console.log(error);
     response.status(300).send(error);
   }
 });
